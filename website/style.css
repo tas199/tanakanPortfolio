@@ -1,0 +1,73 @@
+/*
+ * css variables and reset
+ */
+:root {
+    --font-heading  : "DM Serif Display", Georgia, serif;
+    --font-body     : "DM Sans", system-ui, sans-serif;
+
+    --color-ink     : black;
+    --color-muted   : gray;
+    --color-border  : gainsboro;
+    --color-hover   : whitesmoke;
+
+    --max-width     : 1080px;
+    --side-padding  : 2.5rem;
+    --section-gap   : 7rem;
+    --nav-height    : 55px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background: white;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+strong {
+    font-weight: 500;
+}
