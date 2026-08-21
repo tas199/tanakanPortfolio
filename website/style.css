@@ -115,3 +115,54 @@ strong {
 #navbar-links a:hover {
     color: var(--color-ink);
 }
+
+/*
+ * hero title
+ */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--side-padding);
+}
+
+#hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-top: var(--nav-height);
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#hero-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+#hero-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: 2.5rem;
+}
+
+#hero-heading em {
+    font-style: italic;
+    color: var(--color-muted);
+}
+
+#hero-sub {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--color-muted);
+}
