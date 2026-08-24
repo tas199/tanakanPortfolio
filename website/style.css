@@ -525,3 +525,61 @@ strong {
     color: var(--color-ink);
     transform: translateX(6px);
 }
+
+/*
+ * mobile responsive
+ */
+ /* stacks the project rows and two column grids into one column */
+ @media (max-width: 720px) {
+
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .col-left {
+        position: static;
+    }
+
+    .project-row {
+        grid-template-columns: 1fr 2rem;
+        grid-template-rows: auto auto;
+    }
+
+    .project-thumb {
+        grid-row: 1;
+        grid-column: 1 / -1;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-info {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .project-arrow {
+        grid-row: 2;
+        grid-column: 2;
+        align-self: center;
+    }
+
+    .detail-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .content-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img.wide {
+        grid-column: 1;
+    }
+
+}
