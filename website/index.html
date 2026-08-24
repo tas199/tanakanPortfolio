@@ -86,14 +86,14 @@
                 <div id="project-list">
 
                     <!-- project 1 -->
-                    <div class="project-row" data-project="design1">
+                    <div class="project-row" data-project="cmpt381_a2">
                         <div class="project-thumb">
-                            <img src="images/design1.jpg" alt="Design1" />
+                            <img src="images/cmpt381_a2/cover.png" alt="Composite Widgets" />
                         </div>
                         <div class="project-info">
-                            <p class="project-tag">UI / Web</p>
-                            <h3 class="project-title">Design 1</h3>
-                            <p class="project-desc">description description description description description</p>
+                            <p class="project-tag">UI / Widget</p>
+                            <h3 class="project-title">Composite Widgets</h3>
+                            <p class="project-desc">A JavaFX desktop app built from custom, reusable composite widgets, including draggable dial controls and countdown timers, demonstrating skill in UI design, event handling, and responsive layout.</p>
                         </div>
                         <span class="project-arrow">↗</span>
                     </div>
@@ -170,22 +170,23 @@
         // project list
         const PROJECTS = [
             {
-                id: "design1",
-                tag: "Design1",
-                title: "Design <em>1</em>",
-                cover: "images/1-cover.jpg",  // local path
+                id: "cmpt381_a2",
+                tag: "Implementation of Graphical User Interfaces",
+                title: "Composite <em>Widgets</em>",
+                cover: "images/cmpt381_a2/cover.png",  // local path
                 meta: [
-                    { label: "Year", value: "2024" },
-                    { label: "Role", value: "Designer & Developer" },
-                    { label: "Tools", value: "Figma, React, CSS Variables" },
-                    { label: "Link", value: '<a href="#">GitHub ↗</a>' }
+                    { label: "Year", value: "2025" },
+                    { label: "Role", value: "Designer, Developer" },
+                    { label: "Tools", value: "JavaFX, IntelliJ IDEA, UI Controls" },
+                    { label: "Link", value: '<a href="https://github.com/tas199/cmpt381-2025-a2.git" target="_blank">GitHub ↗</a>' }
                 ],
                 sections: [
-                    { label: "Overview", text: ["Overview Overview Overview Overview"] }
+                    { label: "Overview", text: ["A <strong>JavaFX</strong> desktop app built from custom, reusable <strong>composite widgets</strong>, including draggable dial controls and countdown timers, demonstrating skill in <strong>UI design, event handling, and responsive layout</strong>."] }
                 ],
                 gallery: [
-                    { src: "images/design1-1.jpg", wide: true,  alt: "Overview" },
-                    { src: "images/design1-2.jpg", wide: false, alt: "Detail" }
+                    { src: "images/cmpt381_a2/body1.png", wide: true,  alt: "Countdown timer set-time screen" },
+                    { src: "images/cmpt381_a2/body2.png", wide: false, alt: "Timer finished alert" },
+                    { src: "images/cmpt381_a2/body3.png", wide: false, alt: "Font customization panel" }
                 ],
                 next: "brand-identity"
             }
@@ -331,7 +332,7 @@
                         cssClass = "";
                     }
 
-                    galleryHtml += "<img src=\"" + photo.src + "\" alt=\"" + photo.alt + "\" class=\"" + cssClass + "\" />";
+                    galleryHtml += "<img src=\"" + photo.src + "\" alt=\"" + photo.alt + "\" title=\"" + photo.alt + "\" class=\"" + cssClass + "\" />";
                 }
 
                 document.getElementById("detail-gallery").innerHTML = "<div class=\"gallery\">" + galleryHtml + "</div>";
