@@ -85,15 +85,28 @@
 
                 <div id="project-list">
 
-                    <!-- project 1 -->
+                    <!-- project 2 -->
                     <div class="project-row" data-project="cmpt381_a2">
                         <div class="project-thumb">
-                            <img src="images/cmpt381_a2/cover.png" alt="Composite Widgets" />
+                            <img src="images/cmpt381_a2/cover.png" alt="Countdown Timer" />
                         </div>
                         <div class="project-info">
-                            <p class="project-tag">UI / Widget</p>
-                            <h3 class="project-title">Composite Widgets</h3>
+                            <p class="project-tag">Composite Widgets</p>
+                            <h3 class="project-title">Countdown Timer</h3>
                             <p class="project-desc">A JavaFX desktop app built from custom, reusable composite widgets, including draggable dial controls and countdown timers, demonstrating skill in UI design, event handling, and responsive layout.</p>
+                        </div>
+                        <span class="project-arrow">↗</span>
+                    </div>
+
+                    <!-- project 3 -->
+                    <div class="project-row" data-project="cmpt381_a3">
+                        <div class="project-thumb">
+                            <img src="images/cmpt381_a3/cover.png" alt="Interactive Binary Tree Editor" />
+                        </div>
+                        <div class="project-info">
+                            <p class="project-tag">MVC, Interaction, and Multiple Views</p>
+                            <h3 class="project-title">Interactive Binary Tree Editor</h3>
+                            <p class="project-desc">An interactive JavaFX binary tree editor built using a full Model-View-Controller (MVC) architecture, featuring node creation, drag-and-drop editing, an overview mini-map with panning, and a live properties panel for real-time tree editing.</p>
                         </div>
                         <span class="project-arrow">↗</span>
                     </div>
@@ -171,25 +184,47 @@
         const PROJECTS = [
             {
                 id: "cmpt381_a2",
-                tag: "Implementation of Graphical User Interfaces",
-                title: "Composite <em>Widgets</em>",
+                tag: "Composite Widgets",
+                title: "Countdown <em>Timer</em>",
                 cover: "images/cmpt381_a2/cover.png",  // local path
                 meta: [
                     { label: "Year", value: "2025" },
                     { label: "Role", value: "Designer, Developer" },
-                    { label: "Tools", value: "JavaFX, IntelliJ IDEA, UI Controls" },
+                    { label: "Tools", value: "JavaFX, IntelliJ IDEA, UI Controls, Event-Driven Programming, Object-Oriented Design (OOP), Encapsulation, Responsive Layout" },
                     { label: "Link", value: '<a href="https://github.com/tas199/cmpt381-2025-a2.git" target="_blank">GitHub ↗</a>' }
                 ],
                 sections: [
-                    { label: "Overview", text: ["A <strong>JavaFX</strong> desktop app built from custom, reusable <strong>composite widgets</strong>, including draggable dial controls and countdown timers, demonstrating skill in <strong>UI design, event handling, and responsive layout</strong>."] }
+                    { label: "Overview", text: ["This application is a JavaFX desktop program that shows a control panel with <strong>two countdown timers</strong> and an <strong>activity log</strong> on the side. Each timer is built as a <strong>custom dial control</strong> that users set by <strong>clicking and dragging</strong> around a circle, like turning a clock hand, and the app then <strong>counts down the seconds</strong> while updating the display in real time. The timers run in the <strong>background</strong> so the countdown keeps ticking smoothly, and when a timer finishes, it automatically <strong>adds a message to the log panel</strong>, which is also <strong>resizable</strong> so it can grow or shrink smoothly with the window. The interface is built by combining smaller <strong>custom widgets</strong> (a log panel, an arc-shaped control, and a dial display) into bigger ones, a method called <strong>composite widgets</strong>, so parts of the screen can be <strong>reused</strong> just like normal buttons or sliders."] }
                 ],
                 gallery: [
                     { src: "images/cmpt381_a2/body1.png", wide: true,  alt: "Countdown timer set-time screen" },
                     { src: "images/cmpt381_a2/body2.png", wide: false, alt: "Timer finished alert" },
                     { src: "images/cmpt381_a2/body3.png", wide: false, alt: "Font customization panel" }
                 ],
+                next: "Interactive Binary Tree Editor"
+            },
+
+            {
+                id: "cmpt381_a3",
+                tag: "MVC, Interaction, and Multiple Views",
+                title: "Interactive <em>Binary Tree Editor</em>",
+                cover: "images/cmpt381_a3/cover.png",
+                meta: [
+                    { label: "Year", value: "2025" },
+                    { label: "Role", value: "Designer, Developer" },
+                    { label: "Tools", value: "JavaFX, IntelliJ IDEA, UI Controls" },
+                    { label: "Link", value: '<a href="https://github.com/tas199/cmpt381-2025-a3.git" target="_blank">GitHub ↗</a>' }
+                ],
+                sections: [
+                    { label: "Overview", text: ["This project is an interactive <strong>binary tree editor</strong> built with JavaFX, made to practice <strong>Model-View-Controller (MVC)</strong>, a way of organizing code so the data, the visuals, and the user input are all kept separate and easier to manage. You can click to add nodes, hold Shift and drag to connect them as parent and child, move branches around, select or delete parts, and see everything update right away. Since the tree can get bigger than the screen, there's a small <strong>overview map</strong> that shows the whole tree at once. There's also a <strong>side panel</strong> where you can view or edit details about the node you picked, like its name, depth, and number of children, along with a few basic stats about the tree overall. Overall, it works a lot like the drag-and-drop editors you'd see in real diagramming tools, just built from scratch."] }
+                ],
+                gallery: [
+                    { src: "images/cmpt381_a3/body1.png", wide: true,  alt: "Node tree linking" },
+                    { src: "images/cmpt381_a3/body2.png", wide: false, alt: "Overview map" },
+                    { src: "images/cmpt381_a3/body3.png", wide: false, alt: "Side panel: A node detail" }
+                ],
                 next: "brand-identity"
-            }
+            },
             // additional projects
         ];
 
