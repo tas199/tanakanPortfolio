@@ -201,7 +201,7 @@
                     { src: "images/cmpt381_a2/body2.png", wide: false, alt: "Timer finished alert" },
                     { src: "images/cmpt381_a2/body3.png", wide: false, alt: "Font customization panel" }
                 ],
-                next: "Interactive Binary Tree Editor"
+                next: "cmpt381_a3"
             },
 
             {
@@ -223,7 +223,7 @@
                     { src: "images/cmpt381_a3/body2.png", wide: false, alt: "Overview map" },
                     { src: "images/cmpt381_a3/body3.png", wide: false, alt: "Side panel: A node detail" }
                 ],
-                next: "brand-identity"
+                next: ""
             },
             // additional projects
         ];
@@ -251,7 +251,7 @@
 
         // showHome()
         // switch to home view
-        function showHome(anchor) {
+        function showHome(anchor, fromHistory) {
 
             viewProject.style.display = "none";
             viewHome.style.display = "block";
@@ -274,11 +274,15 @@
                     target.scrollIntoView({ behavior: "smooth" });
                 }
             }
+
+            if (!fromHistory) {
+                history.pushState({ view: "home", anchor: anchor || null }, "", window.location.pathname);
+            }
         }
 
         // showProject()
         // fill the detail template with project data
-        function showProject(id) {
+        function showProject(id, fromHistory) {
 
             const data = findProjectById(id);
 
@@ -389,6 +393,10 @@
             nextLink.dataset.project = data.next;
 
             window.scrollTo({ top: 0, behavior: "instant" });
+
+            if (!fromHistory) {
+                history.pushState({ view: "project", id: id }, "", "?project=" + id);
+            }
         }
 
         // bindNavLinks()
@@ -440,6 +448,32 @@
         });
 
         bindNavLinks();
+
+        // browser back/forward button support
+        window.addEventListener("popstate", function (e) {
+
+            const state = e.state;
+
+            if (state && state.view === "project") {
+                showProject(state.id, true);
+            } else {
+                showHome(state ? state.anchor : null, true);
+            }
+        });
+
+        // set up the  first history entry so that a later "back"
+        (function initHistory() {
+
+            const params = new URLSearchParams(window.location.search);
+            const initialProjectId = params.get("project");
+
+            if (initialProjectId && findProjectById(initialProjectId)) {
+                showProject(initialProjectId, true);
+                history.replaceState({ view: "project", id: initialProjectId }, "", "?project=" + initialProjectId);
+            } else {
+                history.replaceState({ view: "home", anchor: null }, "", window.location.pathname);
+            }
+        })();
 
     </script>
 
