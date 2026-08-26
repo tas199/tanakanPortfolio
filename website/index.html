@@ -225,8 +225,8 @@
                 ],
                 gallery: [
                     { src: "images/cmpt381_a2/body1.png", wide: true,  alt: "Countdown timer set-time screen" },
-                    { src: "images/cmpt381_a2/body2.png", wide: false, alt: "Timer finished alert" },
-                    { src: "images/cmpt381_a2/body3.png", wide: false, alt: "Font customization panel" }
+                    { src: "images/cmpt381_a2/body2.png", wide: false, alt: "Timer alert" },
+                    { src: "images/cmpt381_a2/body3.png", wide: false, alt: "Text size adjustment panel" }
                 ],
                 next: "cmpt381_a3"
             },
@@ -295,7 +295,7 @@
                     { src: "images/cmpt270_a5/body1.png", wide: true,  alt: "UML diagram" },
                     { src: "images/cmpt270_a5/body2.png", wide: false, alt: "Object selection" },
                     { src: "images/cmpt270_a5/body3.png", wide: false, alt: "Object grouping" },
-                    { src: "images/cmpt270_a5/body4.png", wide: true,  alt: "Object rotation" },
+                    { src: "images/cmpt270_a5/body4.png", wide: true,  alt: "console (text-based) version" },
                 ],
                 next: ""
             },
@@ -446,7 +446,11 @@
                         cssClass = "";
                     }
 
-                    galleryHtml += "<img src=\"" + photo.src + "\" alt=\"" + photo.alt + "\" title=\"" + photo.alt + "\" class=\"" + cssClass + "\" />";
+                    // image caption (bottom-left)
+                    galleryHtml += "<figure class=\"gallery-item " + cssClass + "\">" +
+                                       "<img src=\"" + photo.src + "\" alt=\"" + photo.alt + "\" />" +
+                                       "<figcaption>" + photo.alt + "</figcaption>" +
+                                   "</figure>";
                 }
 
                 document.getElementById("detail-gallery").innerHTML = "<div class=\"gallery\">" + galleryHtml + "</div>";
