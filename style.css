@@ -2,8 +2,8 @@
  * css variables and reset
  */
 :root {
-    --font-heading  : "DM Serif Display", Georgia, serif;
-    --font-body     : "DM Sans", system-ui, sans-serif;
+    --font-heading  : "Yeseva One", serif;
+    --font-body     : "Open Sans", sans-serif, system-ui;
 
     --color-ink     : black;
     --color-muted   : gray;
@@ -163,7 +163,7 @@ strong {
 
 #hero-sub {
     font-size: 0.875rem;
-    font-weight: 300;
+    font-weight: 350;
     color: var(--color-muted);
 }
 
