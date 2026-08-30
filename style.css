@@ -161,6 +161,50 @@ strong {
     color: var(--color-muted);
 }
 
+/* glitch effect */
+.glitch {
+    position: relative;
+    display: inline-block;
+    color: black;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: inherit;
+}
+
+.glitch::before {
+    color: #EB212E;
+    animation: glitch-shift 3s infinite;
+}
+
+.glitch::after {
+    color: #2E67F8;
+    animation: glitch-shift 3s infinite reverse;
+}
+
+@keyframes glitch-shift {
+    0%, 92%, 100% { transform: translate(0, 0); clip-path: inset(0 0 100% 0); }
+    93% { transform: translate(-3px, 1px); clip-path: inset(20% 0 40% 0); }
+    94% { transform: translate(3px, -1px); clip-path: inset(60% 0 10% 0); }
+    95% { transform: translate(-2px, 2px); clip-path: inset(10% 0 70% 0); }
+    96% { transform: translate(2px, -2px); clip-path: inset(80% 0 5% 0); }
+    97% { transform: translate(0, 0); clip-path: inset(0 0 100% 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glitch::before,
+    .glitch::after {
+        animation: none;
+        display: none;
+    }
+}
+
 #hero-sub {
     font-size: 0.875rem;
     font-weight: 350;
