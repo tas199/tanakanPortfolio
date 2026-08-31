@@ -180,12 +180,12 @@ strong {
 }
 
 .glitch::before {
-    color: #EB212E;
+    color: hotpink;
     animation: glitch-shift 3s infinite;
 }
 
 .glitch::after {
-    color: #2E67F8;
+    color: cyan;
     animation: glitch-shift 3s infinite reverse;
 }
 
