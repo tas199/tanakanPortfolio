@@ -162,7 +162,15 @@ strong {
     color: var(--color-muted);
 }
 
-/* glitch effect */
+#hero-sub {
+    font-size: 0.875rem;
+    font-weight: 350;
+    color: var(--color-muted);
+}
+
+/* 
+ * glitch effect 
+ */
 .glitch {
     position: relative;
     display: inline-block;
@@ -181,12 +189,12 @@ strong {
 
 .glitch::before {
     color: magenta;
-    animation: glitch-shift 3s infinite;
+    animation: glitch-shift 1.5s infinite;
 }
 
 .glitch::after {
     color: cyan;
-    animation: glitch-shift 3s infinite reverse;
+    animation: glitch-shift 1.5s infinite reverse;
 }
 
 @keyframes glitch-shift {
@@ -204,12 +212,6 @@ strong {
         animation: none;
         display: none;
     }
-}
-
-#hero-sub {
-    font-size: 0.875rem;
-    font-weight: 350;
-    color: var(--color-muted);
 }
 
 /*
