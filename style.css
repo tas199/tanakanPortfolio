@@ -2,9 +2,9 @@
  * css variables and reset
  */
 :root {
-    --font-hero     : "DM Serif Display", serif;
     --font-heading  : "Yeseva One", serif;
     --font-body     : "Open Sans", sans-serif, system-ui;
+    --font-name     : "Roboto Condensed", sans-serif;
 
     --color-ink     : black;
     --color-muted   : gray;
@@ -92,8 +92,9 @@ strong {
 }
 
 #nav-logo {
-    font-family: var(--font-heading);
-    font-style: italic;
+    font-family: var(--font-name);
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 1.0625rem;
     cursor: pointer;
 }
@@ -129,43 +130,39 @@ strong {
 #hero-section {
     min-height: 100vh;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding-top: var(--nav-height);
     padding-bottom: 5rem;
     border-bottom: 1px solid var(--color-border);
 }
 
 #hero-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 2vw, 1.75rem);
+    font-weight: 400;
+    letter-spacing: 0.175em;
     text-transform: uppercase;
-    color: var(--color-muted);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 1.25rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+
 }
 
 #hero-heading {
-    font-family: var(--font-hero);
-    font-size: clamp(3.5rem, 9vw, 8rem);
-    font-weight: 400;
+    font-family: var(--font-name);
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    font-weight: 700;
     line-height: 0.95;
-    letter-spacing: -0.025em;
-    margin-bottom: 2.5rem;
-}
-
-#hero-heading em {
-    font-style: italic;
-    color: var(--color-muted);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 #hero-sub {
-    font-size: 0.875rem;
-    font-weight: 350;
-    color: var(--color-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-align: center;
+
 }
 
 /* 
@@ -206,12 +203,31 @@ strong {
     97% { transform: translate(0, 0); clip-path: inset(0 0 100% 0); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .glitch::before,
-    .glitch::after {
-        animation: none;
-        display: none;
-    }
+/* 
+ * scroll indicator
+ */
+ #hero-section {
+  position: relative;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--color-border);
+    line-height: 1.4;
+    animation: scroll-cycle 3s infinite;
+}
+
+@keyframes scroll-cycle {
+    0%, 66% { opacity: 0; transform: translate(-50%, 0); }
+    70% { opacity: 1; transform: translate(-50%, 0); }
+    83% { opacity: 1; transform: translate(-50%, 6px); }
+    100%, 66.01% { opacity: 0; transform: translate(-50%, 0); }
 }
 
 /*
